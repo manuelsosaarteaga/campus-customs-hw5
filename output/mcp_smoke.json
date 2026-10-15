@@ -1,0 +1,105 @@
+{
+  "smoke_test": "Campus Customs MCP server, called live from the vibe coder",
+  "run_on": "2026-10-14",
+  "server": "campus-customs",
+  "config": ".mcp.json (stdio, .venv/bin/python mcp_server/server.py)",
+  "database": "data/campus_customs_new.db",
+  "shop_today": "2026-08-31",
+  "result": "3 of 3 tools connected and returned live rows from the working database. No tool errors.",
+  "calls": [
+    {
+      "ticket": 101,
+      "prompt": "Ticket 101 is a customer order from Tauhid Zaman for one Classic Bulldog Tee in size S. Check whether we have it in stock and what it costs us.",
+      "tool": "check_stock_and_price",
+      "arguments": { "sku": "CC-TEE-WHITE", "size": "S", "qty_needed": 1 },
+      "output": {
+        "found": true,
+        "sku": "CC-TEE-WHITE",
+        "name": "Classic Bulldog Tee",
+        "size": "S",
+        "on_hand": 0,
+        "location": "Aisle B",
+        "other_sizes_on_hand": { "M": 5, "L": 3, "XL": 2 },
+        "unit_cost": 8,
+        "list_price": 28,
+        "margin_per_unit_at_list": 20,
+        "qty_needed": 1,
+        "can_fill_from_stock": false,
+        "shortfall": 1
+      },
+      "reads": ["inventory", "pricing"],
+      "what_it_shows": "Size S is out of stock, so ticket 101 cannot be filled off the shelf; the shop is 1 unit short and the other sizes are the only tees on hand."
+    },
+    {
+      "ticket": 101,
+      "prompt": "Ticket 101 points at invoice 501. Pull that vendor invoice up and tell me if it is overdue and whether the vendor will still ship us a reprint.",
+      "tool": "get_vendor_invoice",
+      "arguments": { "invoice_id": 501 },
+      "output": {
+        "found": true,
+        "shop_today": "2026-08-31",
+        "invoice_id": 501,
+        "amount": 840,
+        "due_date": "2026-08-28",
+        "status": "open",
+        "description": "Rush reprint CC-TEE-WHITE S",
+        "is_overdue": true,
+        "days_overdue": 3,
+        "vendor": {
+          "id": 1,
+          "name": "Bulldog Print Co",
+          "specialty": "apparel reprint",
+          "lead_days": 5,
+          "earliest_delivery_if_ordered_today": "2026-09-05"
+        },
+        "vendor_open_invoices": [{ "invoice_id": 501, "amount": 840 }],
+        "vendor_blocked_from_shipping": true
+      },
+      "reads": ["invoices", "vendors", "desk"],
+      "what_it_shows": "The $840 reprint invoice is 3 days past due against the shop's today, so Bulldog Print Co is blocked from shipping and the size S restock is stuck behind a payment decision."
+    },
+    {
+      "ticket": 102,
+      "prompt": "Ticket 102 is the rent notice from Elm City Properties on lease 1. Look up the lease and tell me the rent and how many days until it is due.",
+      "tool": "get_lease",
+      "arguments": { "lease_id": 1 },
+      "output": {
+        "found": true,
+        "shop_today": "2026-08-31",
+        "lease_id": 1,
+        "space_name": "Chapel Street shop",
+        "landlord": "Elm City Properties",
+        "monthly_rent": 2400,
+        "next_due": "2026-09-02",
+        "days_until_due": 2,
+        "is_overdue": false,
+        "notes": null
+      },
+      "reads": ["leases", "desk"],
+      "what_it_shows": "Rent of $2,400 on the Chapel Street shop is due 2026-09-02, 2 days out and not yet overdue, which matches the landlord's email in the ticket."
+    },
+    {
+      "ticket": 103,
+      "prompt": "Ticket 103 is the Yale AI Club asking for 20 navy hoodies in size M at a bulk discount. Check what we have in size M and what the margin looks like.",
+      "tool": "check_stock_and_price",
+      "arguments": { "sku": "CC-HOOD-NAVY", "size": "M", "qty_needed": 20 },
+      "output": {
+        "found": true,
+        "sku": "CC-HOOD-NAVY",
+        "name": "Basic Hoodie Big Yale",
+        "size": "M",
+        "on_hand": 8,
+        "location": "Aisle A",
+        "other_sizes_on_hand": { "S": 4, "L": 14, "XL": 6 },
+        "unit_cost": 22,
+        "list_price": 58,
+        "margin_per_unit_at_list": 36,
+        "qty_needed": 20,
+        "can_fill_from_stock": false,
+        "shortfall": 12
+      },
+      "reads": ["inventory", "pricing"],
+      "what_it_shows": "Only 8 of the 20 size M hoodies are on hand, a shortfall of 12, and the $36 margin per unit at list is the room any bulk discount has to come out of."
+    }
+  ]
+}

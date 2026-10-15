@@ -1,0 +1,24 @@
+# Secrets — the Portkey key lives in .env and must never be committed
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+frontend/dist/
+
+# SQLite side files (the two .db files in data/ ARE committed on purpose)
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Course-provided archive; data/campus_customs.db is what the project actually uses
+data.zip
+
+# macOS
+.DS_Store
