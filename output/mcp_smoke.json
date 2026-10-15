@@ -4,6 +4,7 @@
   "server": "campus-customs",
   "config": ".mcp.json (stdio, .venv/bin/python mcp_server/server.py)",
   "database": "data/campus_customs_new.db",
+  "database_state": "Captured on a freshly reset working copy (identical to data/campus_customs.db), before the Problem 9 run. The committed data/campus_customs_new.db is in its post-run state, so two values below have since changed by design: invoice 501 now reads status \"paid\" (0 days overdue, vendor no longer blocked) because a human approved it on ticket 101, and lease 1 now reads next_due 2026-10-02 because September rent was paid on ticket 102. Both check_stock_and_price outputs are unchanged. Run POST /reset (or copy the original over the working copy) to reproduce every output exactly.",
   "shop_today": "2026-08-31",
   "result": "3 of 3 tools connected and returned live rows from the working database. No tool errors.",
   "calls": [

@@ -12,9 +12,9 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
+> btw. this problem should be called Problem 1: Vibe coder prompts
 
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+**What was missing:** My first prompt didn't give the problem's official title, so the header needed to say "Vibe coder prompts."
 
 ---
 
@@ -26,9 +26,9 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
+> zip file added. go ahead and unzip it to continue working...
 
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+**What was missing:** The HW5 database wasn't in the project folder yet, so the vibe coder had nothing to open until I added data.zip.
 
 ---
 
@@ -40,9 +40,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -54,9 +52,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -68,9 +64,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -82,9 +76,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -96,9 +88,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -110,9 +100,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -124,9 +112,7 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
-
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+None needed. The first prompt covered the whole problem.
 
 ---
 
@@ -138,6 +124,18 @@ What I typed to my vibe coder (Claude Code) for each HW5 problem, in my own word
 
 ### Follow-up
 
-> _None yet._
+None needed. The first prompt covered the whole problem.
 
-**What was missing:** _One sentence on what the first prompt didn't cover, if a follow-up was needed._
+---
+
+## Problem 11: Submit to GitHub
+
+### Prompt
+
+> final push to wrap everything up for submission. let's prepare the repo for GitHub: double check .env is in .gitignore, make sure .env.example is present, verify both database files are inside data/, and save the public GitHub repo link in output/github_url.txt. update the root README.md with complete instructions on how to reset the db, start the MCP server, run FastAPI, and launch the React frontend. inspect the full directory structure to make sure all expected files exist!
+
+_(I attached a screenshot with this prompt.)_
+
+### Follow-up
+
+None needed. The first prompt covered the whole problem.
